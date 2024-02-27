@@ -1,0 +1,6 @@
+npm init
+npm i
+npm install mongodb
+install bcryptjs to Incript the password - npm install bcryptjs
+npm install jsonwebtoken -  to securely transfer information over the web(between two parties)
+npm install mongoose - to connect mongodb with nodejs

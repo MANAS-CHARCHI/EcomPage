@@ -1,0 +1,26 @@
+{
+  "name": "ecom_",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MANAS-CHARCHI/EcomPage.git"
+  },
+  "author": "Manas Charchi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MANAS-CHARCHI/EcomPage/issues"
+  },
+  "homepage": "https://github.com/MANAS-CHARCHI/EcomPage#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.2.0"
+  }
+}
