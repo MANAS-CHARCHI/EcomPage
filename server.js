@@ -9,6 +9,9 @@ const db_config=require("./config/db.config")
 const user_model=require("./models/user.model")
 const bcryptjs=require("bcryptjs")
 
+app.use(express.json()) //middleware
+
+
 
 /**
  *  Create a admin user at the staring of the project , if the admin user is not
@@ -25,7 +28,7 @@ const bcryptjs=require("bcryptjs")
 
     async function init(){
         try{
-            let user= await user_model.findOne({userid:"admin"})
+            let user= await user_model.findOne({userId: "admin"})
 
             if(user){
                 console.log("Admin is already present")
@@ -38,10 +41,10 @@ const bcryptjs=require("bcryptjs")
         try{
             user=await user_model.create({
                 name:"Manas Charchi",
-                userid:"admin",
+                userId:"admin",
                 email:"charchimanas2018@gmail.com",
                 userType:"ADMIN",
-                password: bcryptjs.hashSync("hyy",8) 
+                password: bcryptjs.hashSync("welcome2",8) 
                 /**
                  * See here we use bcryptjs to make the password not visible to anyone,
                  * and hasSync is a bcryptjs fucntion help us do that , it added a salt
@@ -56,6 +59,14 @@ const bcryptjs=require("bcryptjs")
         }
     }
 
+/**
+ * Stitch the route to the server
+ */
+
+require("./routes/auth.route")(app) 
+//call the app and pass route object
+
+//now my server knows about the route -> route knows about the controller -> controller know about the Model
 
 /**
  * Start the Server

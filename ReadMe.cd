@@ -49,3 +49,33 @@ When i have to work on Backend i have  to work on :-
     already present
 
 }
+
+{
+    To create USER:-
+                    1. Create a REST URI in postman
+                    2.now create the API use USER request
+                    Now time to create the controller at (./controller/auto.controller.js)
+}
+
+{
+    Now after completion of the controller we go and create the Router at (./route/auth.route.js)
+}
+{
+    Now learn the flow:-
+                    User try to make a call to the express server
+                    inside express server , it has a control to (app) server , 
+                    app give it to route, route give it to controller,
+                    controller give the control to the model.
+
+                    app -> route -> controller -> Model
+}
+
+{
+    then manage the post  controller in (./controller/auth.route.js)
+
+    route is created
+}
+{
+    Now after created route , i have to connect the app with routeso got to server.js and 
+    stich the route to server
+}
