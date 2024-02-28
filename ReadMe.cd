@@ -1,6 +1,51 @@
-npm init
-npm i
-npm install mongodb
-install bcryptjs to Incript the password - npm install bcryptjs
-npm install jsonwebtoken -  to securely transfer information over the web(between two parties)
-npm install mongoose - to connect mongodb with nodejs
+{   
+    Install needed things
+    npm init
+    npm i
+    npm install mongodb
+    install bcryptjs to Incript the password - npm install bcryptjs
+    npm install jsonwebtoken -  to securely transfer information over the web(between two parties)
+    npm install mongoose - to connect mongodb with nodejs
+}
+
+
+{
+    GIT connect:-
+        i-Create a repo without any modification
+        ii-copy the codes to create in vscode
+        iii-git add .
+        iv-git commit -m "first commit"
+        v-git push
+}
+
+{
+When i have to work on Backend i have  to work on :-
+                                                    Model  - 1st work on model
+                                                    Route  - last in route
+                                                    Controller - 2nd work on controller
+
+}
+
+{
+    ./model/user.model.js :- to create the  schema
+    To bring mongoose in file :- code:- const mongoose=require("mongoose)
+    
+    Create the Mongo Schema
+}
+
+{
+    /ECOM/server.js :- This will be the staring file of the project
+    
+}
+
+{
+    config - folder is created for all the configoration of the code like server address and all
+    will be store .{don't hard code the port number, database address and all because that is not 
+    a good pratice}
+}
+
+{
+    Now time to create a admin user at the staring of the project , if the admin user is not
+    already present
+
+}
