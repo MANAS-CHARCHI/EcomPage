@@ -8,6 +8,17 @@ const authMW = require("../middleware/auth.mw")
 
 
 module.exports=(app)=>{
-    app.post("/ecomm/signup", authController.signup)
+    app.post("/ecomm/signup",[authMW.verifySignUpBody], authController.signup)
+
+    /**
+     * route for
+     * Post localhost:8000/ecomm/signup
+     */
+
+    app.post("/ecomm/signin", [authMW.verifySignInBody],authController.signin)
 } 
+
+
+
+
 

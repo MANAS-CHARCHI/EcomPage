@@ -4,6 +4,8 @@
 
 const bcryptjs=require("bcryptjs")
 const user_model=require("../models/user.model")
+const jwt=require("jsonwebtoken")
+const secret=require("../config/auth.config")
 
 // 
 
@@ -49,5 +51,43 @@ exports.signup = async (req, res)=>{
     }
 
     //3. Return the response back to the user
+
+}
+exports.signin=async (req, res)=>{
+
+    //Check if the user id is present in the system
+    const user=await user_model.findOne({userId: req.body.userId})
+    if(user==null){
+        res.status(400).send({
+            message:"User ID passed is not a valid user ID"
+        })
+    }
+    //If password is correct
+
+    const isCorrectPassword=bcryptjs.compareSync(req.body.password, user.password)
+    if(!isCorrectPassword){
+        res.status(401).send({
+            message: "Password is Wrong"
+        })
+    }
+
+    //using JWT we will craete a access token
+
+    const token=jwt.sign({id: user.userId}, secret.secret, {expiresIn: 120}) //id:- what data
+                                            //sign is used to create a token
+                                            // secretkey is for 
+                                            // expire in 120 second after that this token will be expired
+
+    res.status(200).send({
+        name:user.name,
+        userId:user.userId,
+        email:user.email,
+        userType:user.userType,
+        accessToken:token
+    })
+
+
+
+
 
 }
